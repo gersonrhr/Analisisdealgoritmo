@@ -232,9 +232,10 @@ public class Spread extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubirActionPerformed
 
     private void spnMaximoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnMaximoStateChanged
-    if( (int)spnMinimo.getValue()>=(int)spnMaximo.getValue()  ) {
-                    spnMaximo.setValue(((int)spnMinimo.getValue() + 1));
-         }
+    if( 1>=(int)spnMaximo.getValue()  ) {
+        spnMaximo.setValue((1));
+    } else {
+    }
         // TODO add your handling code here:
     }//GEN-LAST:event_spnMaximoStateChanged
 
