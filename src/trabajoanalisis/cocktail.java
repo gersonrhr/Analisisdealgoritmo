@@ -33,6 +33,7 @@ public class cocktail extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grafico = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnAceptarMultiple = new javax.swing.JButton();
@@ -48,7 +49,7 @@ public class cocktail extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGraf = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        btnGrafico = new javax.swing.JToggleButton();
         jPanel6 = new javax.swing.JPanel();
         txtValor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -60,6 +61,19 @@ public class cocktail extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         txtTiempo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+
+        grafico.setSize(new java.awt.Dimension(500, 500));
+
+        javax.swing.GroupLayout graficoLayout = new javax.swing.GroupLayout(grafico.getContentPane());
+        grafico.getContentPane().setLayout(graficoLayout);
+        graficoLayout.setHorizontalGroup(
+            graficoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 389, Short.MAX_VALUE)
+        );
+        graficoLayout.setVerticalGroup(
+            graficoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Cocktail");
@@ -118,7 +132,12 @@ public class cocktail extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGraf);
 
-        jButton2.setText("Graficar");
+        btnGrafico.setText("Grafico");
+        btnGrafico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraficoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -127,9 +146,9 @@ public class cocktail extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGrafico)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,8 +156,8 @@ public class cocktail extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 39, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jButton2)
+                .addGap(67, 67, 67)
+                .addComponent(btnGrafico)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -151,7 +170,7 @@ public class cocktail extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 13, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,7 +347,7 @@ public class cocktail extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 780, Short.MAX_VALUE)
                 .addComponent(jButton1))
         );
         layout.setVerticalGroup(
@@ -405,6 +424,19 @@ public class cocktail extends javax.swing.JFrame {
 // TODO add your handling code here:
     }//GEN-LAST:event_btnAceptarMultipleActionPerformed
 
+    private void btnGraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficoActionPerformed
+        grafico.setLocationRelativeTo(null);
+        if (btnGrafico.isSelected()){
+            grafico.setVisible(true);
+        }else{
+            
+            grafico.setVisible(false);
+            
+        }
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnGraficoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -443,10 +475,11 @@ public class cocktail extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarMultiple;
     private javax.swing.JButton btnAceptarSimple;
+    private javax.swing.JToggleButton btnGrafico;
     private javax.swing.JButton btnSubir;
     private javax.swing.JCheckBox chkVer;
+    private javax.swing.JFrame grafico;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
