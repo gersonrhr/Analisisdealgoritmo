@@ -22,7 +22,8 @@ public class cocktail extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-    
+   
+
 
     /**
      * This method is called from within the constructor to initialize the form.
