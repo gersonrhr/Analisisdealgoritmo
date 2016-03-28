@@ -32,7 +32,8 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 500));
-        getContentPane().setLayout(new java.awt.GridLayout());
+        setResizable(false);
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         btnSpread.setText("Spread Sort");
         btnSpread.addActionListener(new java.awt.event.ActionListener() {
@@ -43,6 +44,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(btnSpread);
 
         btnCocktail.setText("Cocktail Sort");
+        btnCocktail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCocktailActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCocktail);
 
         pack();
@@ -51,8 +57,16 @@ public class Principal extends javax.swing.JFrame {
     private void btnSpreadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpreadActionPerformed
       Spread a=new Spread();
       a.setVisible(true);
+      this.hide();
       // TODO add your handling code here:
     }//GEN-LAST:event_btnSpreadActionPerformed
+
+    private void btnCocktailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCocktailActionPerformed
+           cocktail a=new cocktail();
+           a.setVisible(true);
+           this.setVisible(false);
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnCocktailActionPerformed
 
     /**
      * @param args the command line arguments

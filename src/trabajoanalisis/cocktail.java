@@ -416,7 +416,7 @@ public class cocktail extends javax.swing.JFrame {
         
         while (n<= Math.pow(10, (int) spnMaximo.getValue()))
         {
-        System.out.println(i + "  " + n + "   " + 10*(int)spnMaximo.getValue());
+//        System.out.println(i + "  " + n + "   " + 10*(int)spnMaximo.getValue());
         tblGraf.setValueAt(a.ejecutarsin(n),i,1);
         n=n*10;
         i++;
@@ -426,14 +426,18 @@ public class cocktail extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAceptarMultipleActionPerformed
 
     private void btnGraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficoActionPerformed
-        grafico.setLocationRelativeTo(null);
-        if (btnGrafico.isSelected()){
-            grafico.setVisible(true);
-        }else{
-            
-            grafico.setVisible(false);
-            
-        }
+//        grafico.setLocationRelativeTo(null);
+//        
+//        if (btnGrafico.isSelected()){
+//            grafico.setVisible(true);
+//        }else{
+//            
+//            grafico.setVisible(false);
+//            
+//        }
+        grafico a=new grafico();
+        a.graficar(tblGraf);
+        
         
 // TODO add your handling code here:
     }//GEN-LAST:event_btnGraficoActionPerformed
