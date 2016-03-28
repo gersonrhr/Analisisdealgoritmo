@@ -3,11 +3,6 @@
 <Form version="1.5" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JFrame" name="grafico">
-      <Properties>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[500, 500]"/>
-        </Property>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -295,15 +290,29 @@
                     <Component class="javax.swing.JTable" name="tblGraf">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="2" rowCount="7">
+                          <Table columnCount="2" rowCount="21">
                             <Column editable="true" title="n" type="java.lang.Object">
                               <Data value="1"/>
-                              <Data value="10"/>
-                              <Data value="100"/>
-                              <Data value="1000"/>
                               <Data value="10000"/>
+                              <Data value="20000"/>
+                              <Data value="30000"/>
+                              <Data value="40000"/>
+                              <Data value="50000"/>
+                              <Data value="60000"/>
+                              <Data value="70000"/>
+                              <Data value="80000"/>
+                              <Data value="90000"/>
                               <Data value="100000"/>
+                              <Data value="200000"/>
+                              <Data value="300000"/>
+                              <Data value="400000"/>
+                              <Data value="500000"/>
+                              <Data value="600000"/>
+                              <Data value="700000"/>
+                              <Data value="800000"/>
+                              <Data value="900000"/>
                               <Data value="1000000"/>
+                              <Data value="null"/>
                             </Column>
                             <Column editable="true" title="Tiempo en ms" type="java.lang.Object"/>
                           </Table>

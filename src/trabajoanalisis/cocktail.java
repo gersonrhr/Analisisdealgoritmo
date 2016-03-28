@@ -63,8 +63,6 @@ public class cocktail extends javax.swing.JFrame {
         txtTiempo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        grafico.setSize(new java.awt.Dimension(500, 500));
-
         javax.swing.GroupLayout graficoLayout = new javax.swing.GroupLayout(grafico.getContentPane());
         grafico.getContentPane().setLayout(graficoLayout);
         graficoLayout.setHorizontalGroup(
@@ -120,12 +118,26 @@ public class cocktail extends javax.swing.JFrame {
         tblGraf.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", null},
-                {"10", null},
-                {"100", null},
-                {"1000", null},
                 {"10000", null},
+                {"20000", null},
+                {"30000", null},
+                {"40000", null},
+                {"50000", null},
+                {"60000", null},
+                {"70000", null},
+                {"80000", null},
+                {"90000", null},
                 {"100000", null},
-                {"1000000", null}
+                {"200000", null},
+                {"300000", null},
+                {"400000", null},
+                {"500000", null},
+                {"600000", null},
+                {"700000", null},
+                {"800000", null},
+                {"900000", null},
+                {"1000000", null},
+                {null, null}
             },
             new String [] {
                 "n", "Tiempo en ms"
@@ -411,15 +423,22 @@ public class cocktail extends javax.swing.JFrame {
 
     private void btnAceptarMultipleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarMultipleActionPerformed
         CocktailSort a=new CocktailSort();   
-        int n=1;
+        int n=0;
         int i=0;
         
         while (n<= Math.pow(10, (int) spnMaximo.getValue()))
         {
-//        System.out.println(i + "  " + n + "   " + 10*(int)spnMaximo.getValue());
-        tblGraf.setValueAt(a.ejecutarsin(n),i,1);
-        n=n*10;
-        i++;
+            if (n<=100000) {
+//              System.out.println(i + "  " + n + "   " + 10*(int)spnMaximo.getValue());
+                tblGraf.setValueAt(a.ejecutarsin(n),i,1);
+                n=n+10000;
+                i++;
+            }
+            else {
+                tblGraf.setValueAt(a.ejecutarsin(n),i,1);
+                n=n+100000;
+                i++;
+            }
         
         }
 // TODO add your handling code here:
