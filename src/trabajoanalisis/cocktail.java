@@ -51,6 +51,8 @@ public class cocktail extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGraf = new javax.swing.JTable();
         btnGrafico = new javax.swing.JToggleButton();
+        jLabel10 = new javax.swing.JLabel();
+        txtValor1 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         txtValor = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -174,6 +176,10 @@ public class cocktail extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel10.setText("n=");
+
+        txtValor1.setText("1000");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -187,12 +193,19 @@ public class cocktail extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(16, 16, 16))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnAceptarMultiple)
-                                .addGap(73, 73, 73)))
+                                .addGap(72, 72, 72)))
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -205,11 +218,16 @@ public class cocktail extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(16, 16, 16)
                         .addComponent(btnAceptarMultiple)
-                        .addGap(25, 25, 25))
+                        .addGap(13, 13, 13))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -397,6 +415,8 @@ public class cocktail extends javax.swing.JFrame {
     if( (int)spnMaximo.getValue()>7  ) {
             spnMaximo.setValue(7);
         }
+    txtValor1.setText((int)Math.pow(10, Integer.parseInt(spnMaximo.getValue().toString()))+"");
+    
         // TODO add your handling code here:
     }//GEN-LAST:event_spnMaximoStateChanged
 
@@ -426,7 +446,8 @@ public class cocktail extends javax.swing.JFrame {
         int n=0;
         int i=0;
         
-        while (n<= Math.pow(10, (int) spnMaximo.getValue()))
+//        while (n<= Math.pow(10, (int) spnMaximo.getValue()))
+        while (n<= (int)Integer.parseInt(txtValor1.getText()))
         {
             if (n<=100000) {
 //              System.out.println(i + "  " + n + "   " + 10*(int)spnMaximo.getValue());
@@ -505,6 +526,7 @@ public class cocktail extends javax.swing.JFrame {
     private javax.swing.JFrame grafico;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -525,5 +547,6 @@ public class cocktail extends javax.swing.JFrame {
     private javax.swing.JTable tblGraf;
     private javax.swing.JLabel txtTiempo;
     private javax.swing.JTextField txtValor;
+    private javax.swing.JTextField txtValor1;
     // End of variables declaration//GEN-END:variables
 }
