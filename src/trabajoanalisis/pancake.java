@@ -96,25 +96,52 @@ public class pancake extends javax.swing.JFrame {
         tblGraf.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", null},
-                {"100", null},
-                {"200", null},
-                {"300", null},
-                {"400", null},
                 {"500", null},
-                {"600", null},
-                {"700", null},
-                {"800", null},
-                {"900", null},
                 {"1000", null},
+                {"1500", null},
                 {"2000", null},
+                {"2500", null},
                 {"3000", null},
+                {"3500", null},
                 {"4000", null},
+                {"4500", null},
                 {"5000", null},
+                {"5500", null},
                 {"6000", null},
+                {"6500", null},
                 {"7000", null},
+                {"7500", null},
                 {"8000", null},
+                {"8500", null},
                 {"9000", null},
+                {"9500", null},
                 {"10000", null},
+                {"30000", null},
+                {"20000", null},
+                {"40000", null},
+                {"50000", null},
+                {"60000", null},
+                {"70000", null},
+                {"80000", null},
+                {"90000", null},
+                {"100000", null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
                 {null, null}
             },
             new String [] {
@@ -285,15 +312,15 @@ public class pancake extends javax.swing.JFrame {
             tblGraf.setValueAt(tiempo,pTabla,1);
             pTabla++;
             
-            if (n<100) {
+            if (n<1000) {
                 i=i+n;
             }
             else{
-                if (i<=1000) {
-                    i=i+100;
+                if (i<10000) {
+                    i=i+500;
                 }
-                if (i<=10000 && i>1000) {
-                    i=i+1000;
+                else if (i<100000 && i>=10000) {
+                    i=i+10000;
                 }
             }
             
