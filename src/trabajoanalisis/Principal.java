@@ -35,7 +35,7 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        btnSpread.setText("Spread Sort");
+        btnSpread.setText("Cocktail Sort");
         btnSpread.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSpreadActionPerformed(evt);
@@ -55,14 +55,14 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSpreadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpreadActionPerformed
-      Spread a=new Spread();
+      Cocktail a=new Cocktail();
       a.setVisible(true);
       this.hide();
       // TODO add your handling code here:
     }//GEN-LAST:event_btnSpreadActionPerformed
 
     private void btnCocktailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCocktailActionPerformed
-           cocktail a=new cocktail();
+           Cocktail a=new Cocktail();
            a.setVisible(true);
            this.setVisible(false);
 // TODO add your handling code here:

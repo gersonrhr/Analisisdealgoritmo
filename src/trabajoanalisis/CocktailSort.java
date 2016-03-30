@@ -1,7 +1,7 @@
 package trabajoanalisis;
 
 import java.util.*;
-import trabajoanalisis.CocktailMuestra;
+import trabajoanalisis.Muestra;
  
 public class CocktailSort{
  
@@ -51,7 +51,7 @@ public class CocktailSort{
     for (int i=0; i<n; i++){
     array[i]=rnd.nextInt()%1000;
     }
-    CocktailMuestra desorden=new CocktailMuestra();
+    Muestra desorden=new Muestra();
     desorden.desordenllenar(array);
     
 //    System.out.println("Before: " + Arrays.toString(array));

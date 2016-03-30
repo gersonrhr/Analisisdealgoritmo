@@ -25,8 +25,7 @@ public class PancakeSort
             int tmp = heap[i];
             heap[i] = heap[n-i];
             heap[n-i] = tmp;
-        }      
-        System.out.println("flip(0.." + n + "): " + toString());
+        }
     }
  
     public int[] minmax(int n) {

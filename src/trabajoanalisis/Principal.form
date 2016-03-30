@@ -32,7 +32,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnSpread">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Spread Sort"/>
+        <Property name="text" type="java.lang.String" value="Cocktail Sort"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSpreadActionPerformed"/>
