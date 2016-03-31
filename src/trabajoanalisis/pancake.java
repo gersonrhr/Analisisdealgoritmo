@@ -6,6 +6,7 @@
 package trabajoanalisis;
 
 import java.util.Random;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -44,12 +45,23 @@ public class pancake extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGraf = new javax.swing.JTable();
-        btnGrafico = new javax.swing.JToggleButton();
+        btnGraficar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtValor1 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        txtValor = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        spnSimple = new javax.swing.JSpinner();
+        btnSubir = new javax.swing.JButton();
+        btnAceptarSimple = new javax.swing.JButton();
+        chkVer = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
+        txtTiempo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -150,10 +162,10 @@ public class pancake extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGraf);
 
-        btnGrafico.setText("Grafico");
-        btnGrafico.addActionListener(new java.awt.event.ActionListener() {
+        btnGraficar.setText("Graficar");
+        btnGraficar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGraficoActionPerformed(evt);
+                btnGraficarActionPerformed(evt);
             }
         });
 
@@ -164,9 +176,9 @@ public class pancake extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGrafico)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnGraficar)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,8 +186,8 @@ public class pancake extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 39, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(btnGrafico)
+                .addGap(60, 60, 60)
+                .addComponent(btnGraficar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -251,6 +263,115 @@ public class pancake extends javax.swing.JFrame {
 
         jLabel11.setText("Multiple:");
 
+        jLabel12.setText("Simple:");
+
+        jPanel6.setToolTipText("Simple");
+
+        txtValor.setText("1000");
+
+        jLabel1.setText("n=");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setText("10");
+
+        spnSimple.setValue(3
+        );
+        spnSimple.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spnSimpleStateChanged(evt);
+            }
+        });
+
+        btnSubir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/trabajoanalisis/imagenes/arriba.png"))); // NOI18N
+        btnSubir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubirActionPerformed(evt);
+            }
+        });
+
+        btnAceptarSimple.setText("Aceptar");
+        btnAceptarSimple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarSimpleActionPerformed(evt);
+            }
+        });
+
+        chkVer.setText("Ver contenido (Demora mas en cargar)");
+        chkVer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkVerActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("TIEMPO DE CARGA");
+
+        txtTiempo.setBackground(new java.awt.Color(51, 255, 51));
+        txtTiempo.setForeground(new java.awt.Color(0, 0, 255));
+        txtTiempo.setText("0");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spnSimple, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSubir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(chkVer)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnAceptarSimple)))))
+                .addGap(0, 31, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnSubir, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(spnSimple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(chkVer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAceptarSimple)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -262,7 +383,14 @@ public class pancake extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(200, 200, 200)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel12)
+                            .addContainerGap(629, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +400,11 @@ public class pancake extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addGap(35, 35, 35)
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(76, 76, 76))
         );
 
         pack();
@@ -280,6 +412,10 @@ public class pancake extends javax.swing.JFrame {
 
     private void btnAceptarMultipleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarMultipleActionPerformed
         PancakeSort pancake;
+        
+        DefaultTableModel lista = new DefaultTableModel();
+        tblGraf.setModel(lista);
+        lista.setColumnIdentifiers(new Object[] {"n","tiempo en ms"});
         
         int n = Integer.parseInt(txtValor1.getText());
         int[] datos = new int [n];
@@ -309,7 +445,7 @@ public class pancake extends javax.swing.JFrame {
             pancake = new PancakeSort(aux);
             long fin = System.currentTimeMillis();
             long tiempo = fin - inicio;
-            tblGraf.setValueAt(tiempo,pTabla,1);
+            lista.addRow(new Object[] {i,tiempo});
             pTabla++;
             
             if (n<1000) {
@@ -317,14 +453,14 @@ public class pancake extends javax.swing.JFrame {
             }
             else{
                 if (i<10000) {
-                    i=i+500;
+                    i=i+100;
                 }
-                else if (i<100000 && i>=10000) {
+                else if (i<100000) {
                     i=i+10000;
                 }
             }
-            
         }
+        lista.addRow(new Object[] {null,null});
         
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAceptarMultipleActionPerformed
@@ -341,27 +477,66 @@ public class pancake extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_spnMaximoStateChanged
 
-    private void btnGraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficoActionPerformed
-        //        grafico.setLocationRelativeTo(null);
-        //
-        //        if (btnGrafico.isSelected()){
-            //            grafico.setVisible(true);
-            //        }else{
-            //
-            //            grafico.setVisible(false);
-            //
-            //        }
-        grafico a=new grafico();
-        a.graficar(tblGraf);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGraficoActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.hide();
         Principal a=new Principal();
         a.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarActionPerformed
+        // TODO add your handling code here:
+        grafico a=new grafico();
+        a.graficar(tblGraf);
+    }//GEN-LAST:event_btnGraficarActionPerformed
+
+    private void spnSimpleStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnSimpleStateChanged
+        if( (int)spnSimple.getValue()<1  ) {
+            spnSimple.setValue(1);
+        }
+        if( (int)spnSimple.getValue()>7  ) {
+            spnSimple.setValue(7);
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spnSimpleStateChanged
+
+    private void btnSubirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubirActionPerformed
+        txtValor.setText(""+ (int)Math.pow(10, (int)spnSimple.getValue()) );
+    }//GEN-LAST:event_btnSubirActionPerformed
+
+    private void btnAceptarSimpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarSimpleActionPerformed
+        
+        int n = Integer.parseInt(txtValor.getText());
+        int[] datos = new int[n];
+        Random rnd = new Random();
+        PancakeSort pancake;
+        
+        for (int i=0;i<n;i++) {
+            datos[i] = rnd.nextInt()%1000;
+        }
+        
+        if (chkVer.isSelected()){
+            Muestra m = new Muestra();
+            m.desordenllenar(datos);
+            long inicio = System.currentTimeMillis();
+            pancake = new PancakeSort(datos);
+            long fin = System.currentTimeMillis();
+            long tiempo = fin - inicio;
+            m.ordenllenar(datos);
+            txtTiempo.setText(""+tiempo);
+        } else   {
+            long inicio = System.currentTimeMillis();
+            pancake = new PancakeSort(datos);
+            long fin = System.currentTimeMillis();
+            long tiempo = fin - inicio;
+            txtTiempo.setText(""+tiempo);
+        }
+
+    }//GEN-LAST:event_btnAceptarSimpleActionPerformed
+
+    private void chkVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkVerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkVerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -400,24 +575,35 @@ public class pancake extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarMultiple;
-    private javax.swing.JToggleButton btnGrafico;
+    private javax.swing.JButton btnAceptarSimple;
+    private javax.swing.JButton btnGraficar;
+    private javax.swing.JButton btnSubir;
+    private javax.swing.JCheckBox chkVer;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSpinner spnMaximo;
+    private javax.swing.JSpinner spnSimple;
     private javax.swing.JTable tblGraf;
+    private javax.swing.JLabel txtTiempo;
+    private javax.swing.JTextField txtValor;
     private javax.swing.JTextField txtValor1;
     // End of variables declaration//GEN-END:variables
 }

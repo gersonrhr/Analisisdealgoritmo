@@ -7,6 +7,7 @@ package trabajoanalisis;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -50,7 +51,7 @@ public class cocktail extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGraf = new javax.swing.JTable();
-        btnGrafico = new javax.swing.JToggleButton();
+        btnGraficar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtValor1 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -125,25 +126,16 @@ public class cocktail extends javax.swing.JFrame {
         tblGraf.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", null},
+                {"1000", null},
+                {"2000", null},
+                {"3000", null},
+                {"4000", null},
+                {"5000", null},
+                {"6000", null},
+                {"7000", null},
+                {"8000", null},
+                {"9000", null},
                 {"10000", null},
-                {"20000", null},
-                {"30000", null},
-                {"40000", null},
-                {"50000", null},
-                {"60000", null},
-                {"70000", null},
-                {"80000", null},
-                {"90000", null},
-                {"100000", null},
-                {"200000", null},
-                {"300000", null},
-                {"400000", null},
-                {"500000", null},
-                {"600000", null},
-                {"700000", null},
-                {"800000", null},
-                {"900000", null},
-                {"1000000", null},
                 {null, null}
             },
             new String [] {
@@ -152,10 +144,10 @@ public class cocktail extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGraf);
 
-        btnGrafico.setText("Grafico");
-        btnGrafico.addActionListener(new java.awt.event.ActionListener() {
+        btnGraficar.setText("Graficar");
+        btnGraficar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGraficoActionPerformed(evt);
+                btnGraficarActionPerformed(evt);
             }
         });
 
@@ -167,7 +159,7 @@ public class cocktail extends javax.swing.JFrame {
                 .addGap(86, 86, 86)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGrafico)
+                .addComponent(btnGraficar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -176,8 +168,8 @@ public class cocktail extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 39, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(btnGrafico)
+                .addGap(62, 62, 62)
+                .addComponent(btnGraficar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -470,41 +462,37 @@ public class cocktail extends javax.swing.JFrame {
         int n=0;
         int i=0;
         
+        DefaultTableModel lista = new DefaultTableModel();
+        tblGraf.setModel(lista);
+        lista.setColumnIdentifiers(new Object[] {"n","tiempo en ms"});
+        
 //        while (n<= Math.pow(10, (int) spnMaximo.getValue()))
         while (n<= (int)Integer.parseInt(txtValor1.getText()))
         {
-            if (n<=100000) {
+            lista.addRow(new Object[] {n,a.ejecutarsin(n)});
+            if (n<100) {
+                n=n+10;
+            } else if (n<1000) {
+                n=n+100;
+            } else if (n<10000) {
+                n=n+1000;
+            } else if (n<100000) {
 //              System.out.println(i + "  " + n + "   " + 10*(int)spnMaximo.getValue());
-                tblGraf.setValueAt(a.ejecutarsin(n),i,1);
                 n=n+10000;
-                i++;
-            }
-            else {
-                tblGraf.setValueAt(a.ejecutarsin(n),i,1);
+            } else if (n<1000000){
                 n=n+100000;
-                i++;
             }
-        
+            i++;
         }
+        lista.addRow(new Object[] {null,null});
 // TODO add your handling code here:
     }//GEN-LAST:event_btnAceptarMultipleActionPerformed
 
-    private void btnGraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficoActionPerformed
-//        grafico.setLocationRelativeTo(null);
-//        
-//        if (btnGrafico.isSelected()){
-//            grafico.setVisible(true);
-//        }else{
-//            
-//            grafico.setVisible(false);
-//            
-//        }
+    private void btnGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarActionPerformed
+        // TODO add your handling code here:
         grafico a=new grafico();
         a.graficar(tblGraf);
-        
-        
-// TODO add your handling code here:
-    }//GEN-LAST:event_btnGraficoActionPerformed
+    }//GEN-LAST:event_btnGraficarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -544,7 +532,7 @@ public class cocktail extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarMultiple;
     private javax.swing.JButton btnAceptarSimple;
-    private javax.swing.JToggleButton btnGrafico;
+    private javax.swing.JButton btnGraficar;
     private javax.swing.JButton btnSubir;
     private javax.swing.JCheckBox chkVer;
     private javax.swing.JFrame grafico;
