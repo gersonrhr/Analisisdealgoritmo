@@ -11,35 +11,43 @@ public class CocktailSort{
         return as;
     }
     
-  public static void sort( int[] array ){
-    boolean swapped;
-    do {
-      swapped = false;
-      for (int i =0; i<=  array.length  - 2;i++) {
-        if (array[ i ] > array[ i + 1 ]) {
-          //test whether the two elements are in the wrong order
-          int temp = array[i];
-          array[i] = array[i+1];
-          array[i+1]=temp;
-          swapped = true;
-        }
+public static int[] sort(int[] numbers) 
+{
+      boolean swapped = true;
+      int i = 0;
+      int j = numbers.length - 1;
+      while(i < j && swapped) 
+      {
+         swapped = false;
+         for(int k = i; k < j; k++) 
+         {
+            if(numbers[k] > numbers[k + 1]) 
+            {
+               int temp = numbers[k];
+               numbers[k] = numbers[k + 1];
+               numbers[k + 1] = temp;
+               swapped = true;
+            }
+         }
+         j--;
+         if(swapped) 
+         {
+            swapped = false;
+            for(int k = j; k > i; k--) 
+            {
+               if(numbers[k] < numbers[k - 1]) 
+               {
+                  int temp = numbers[k];
+                  numbers[k] = numbers[k - 1];
+                  numbers[k - 1] = temp;
+                  swapped = true;
+               }
+            }
+         }
+         i++;
       }
-      if (!swapped) {
-        //we can exit the outer loop here if no swaps occurred.
-        break;
-      }
-      swapped = false;
-      for (int i= array.length - 2;i>=0;i--) {
-        if (array[ i ] > array[ i + 1 ]) {
-          int temp = array[i];
-          array[i] = array[i+1];
-          array[i+1]=temp;
-          swapped = true;
-        }
-      }
-    //if no elements have been swapped, then the list is sorted
-    } while (swapped);
-  }
+      return numbers;    
+}
  
   long ejecutar(int n){
 //     n=100;
