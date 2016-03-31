@@ -28,7 +28,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         btnSpread = new javax.swing.JButton();
-        btnCocktail = new javax.swing.JButton();
+        btnPancake = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 500));
@@ -43,30 +43,30 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnSpread);
 
-        btnCocktail.setText("Cocktail Sort");
-        btnCocktail.addActionListener(new java.awt.event.ActionListener() {
+        btnPancake.setText("Pancake Sort");
+        btnPancake.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCocktailActionPerformed(evt);
+                btnPancakeActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCocktail);
+        getContentPane().add(btnPancake);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSpreadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSpreadActionPerformed
-      Cocktail a=new Cocktail();
-      a.setVisible(true);
-      this.hide();
-      // TODO add your handling code here:
+        cocktail a=new cocktail();
+        a.setVisible(true);
+        this.hide();
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnSpreadActionPerformed
 
-    private void btnCocktailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCocktailActionPerformed
-           Cocktail a=new Cocktail();
-           a.setVisible(true);
-           this.setVisible(false);
+    private void btnPancakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPancakeActionPerformed
+        pancake a=new pancake();
+        a.setVisible(true);
+        this.setVisible(false);
 // TODO add your handling code here:
-    }//GEN-LAST:event_btnCocktailActionPerformed
+    }//GEN-LAST:event_btnPancakeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,7 +103,7 @@ public class Principal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCocktail;
+    private javax.swing.JButton btnPancake;
     private javax.swing.JButton btnSpread;
     // End of variables declaration//GEN-END:variables
 }

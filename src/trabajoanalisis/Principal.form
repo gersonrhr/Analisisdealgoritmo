@@ -38,12 +38,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSpreadActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCocktail">
+    <Component class="javax.swing.JButton" name="btnPancake">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cocktail Sort"/>
+        <Property name="text" type="java.lang.String" value="Pancake Sort"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCocktailActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPancakeActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
