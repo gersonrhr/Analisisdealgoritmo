@@ -11,42 +11,42 @@ public class CocktailSort{
         return as;
     }
     
-public static int[] sort(int[] numbers) 
+public static int[] sort(int[] datos) 
 {
-      boolean swapped = true;
-      int i = 0;
-      int j = numbers.length - 1;
-      while(i < j && swapped) 
-      {
-         swapped = false;
-         for(int k = i; k < j; k++) 
-         {
-            if(numbers[k] > numbers[k + 1]) 
+    boolean cambiado = true;
+    int i = 0;
+    int j = datos.length - 1;
+    while(i < j && cambiado) 
+    {
+        cambiado = false;
+        for(int k = i; k < j; k++) 
+        {
+            if(datos[k] > datos[k + 1]) 
             {
-               int temp = numbers[k];
-               numbers[k] = numbers[k + 1];
-               numbers[k + 1] = temp;
-               swapped = true;
+                int temp = datos[k];
+                datos[k] = datos[k + 1];
+                datos[k + 1] = temp;
+                cambiado = true;
             }
-         }
-         j--;
-         if(swapped) 
-         {
-            swapped = false;
+        }
+        j--;
+        if(cambiado) 
+        {
+            cambiado = false;
             for(int k = j; k > i; k--) 
             {
-               if(numbers[k] < numbers[k - 1]) 
-               {
-                  int temp = numbers[k];
-                  numbers[k] = numbers[k - 1];
-                  numbers[k - 1] = temp;
-                  swapped = true;
-               }
+                if(datos[k] < datos[k - 1]) 
+                {
+                    int temp = datos[k];
+                    datos[k] = datos[k - 1];
+                    datos[k - 1] = temp;
+                    cambiado = true;
+                }
             }
-         }
-         i++;
-      }
-      return numbers;    
+        }
+        i++;
+    }
+    return datos;    
 }
  
   long ejecutar(int n){
