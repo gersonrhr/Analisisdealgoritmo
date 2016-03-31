@@ -46,7 +46,7 @@ public class Pancake extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblGraf = new javax.swing.JTable();
-        btnGrafico = new javax.swing.JToggleButton();
+        btnGraficar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtValor1 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -65,6 +65,7 @@ public class Pancake extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pancake Sort");
 
         jPanel2.setToolTipText("Multiple");
 
@@ -109,35 +110,16 @@ public class Pancake extends javax.swing.JFrame {
         tblGraf.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", null},
+                {"100", null},
+                {"200", null},
+                {"300", null},
+                {"400", null},
                 {"500", null},
+                {"600", null},
+                {"700", null},
+                {"800", null},
+                {"900", null},
                 {"1000", null},
-                {"1500", null},
-                {"2000", null},
-                {"2500", null},
-                {"3000", null},
-                {"3500", null},
-                {"4000", null},
-                {"4500", null},
-                {"5000", null},
-                {"5500", null},
-                {"6000", null},
-                {"6500", null},
-                {"7000", null},
-                {"7500", null},
-                {"8000", null},
-                {"8500", null},
-                {"9000", null},
-                {"9500", null},
-                {"10000", null},
-                {"30000", null},
-                {"20000", null},
-                {"40000", null},
-                {"50000", null},
-                {"60000", null},
-                {"70000", null},
-                {"80000", null},
-                {"90000", null},
-                {"100000", null},
                 {null, null},
                 {null, null},
                 {null, null},
@@ -163,10 +145,10 @@ public class Pancake extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblGraf);
 
-        btnGrafico.setText("Grafico");
-        btnGrafico.addActionListener(new java.awt.event.ActionListener() {
+        btnGraficar.setText("Graficar");
+        btnGraficar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGraficoActionPerformed(evt);
+                btnGraficarActionPerformed(evt);
             }
         });
 
@@ -178,7 +160,7 @@ public class Pancake extends javax.swing.JFrame {
                 .addGap(86, 86, 86)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGrafico)
+                .addComponent(btnGraficar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -187,8 +169,8 @@ public class Pancake extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 39, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(btnGrafico)
+                .addGap(61, 61, 61)
+                .addComponent(btnGraficar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -479,22 +461,6 @@ public class Pancake extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_spnMaximoStateChanged
 
-    private void btnGraficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficoActionPerformed
-        //        grafico.setLocationRelativeTo(null);
-        //
-        //        if (btnGrafico.isSelected()){
-            //            grafico.setVisible(true);
-            //        }else{
-            //
-            //            grafico.setVisible(false);
-            //
-            //        }
-        grafico a=new grafico();
-        a.graficar(tblGraf);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGraficoActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.hide();
         Principal a=new Principal();
@@ -552,6 +518,12 @@ public class Pancake extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chkVerActionPerformed
 
+    private void btnGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarActionPerformed
+        // TODO add your handling code here:
+        grafico a=new grafico();
+        a.graficar(tblGraf);
+    }//GEN-LAST:event_btnGraficarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -591,7 +563,7 @@ public class Pancake extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarMultiple;
     private javax.swing.JButton btnAceptarSimple;
-    private javax.swing.JToggleButton btnGrafico;
+    private javax.swing.JButton btnGraficar;
     private javax.swing.JButton btnSubir;
     private javax.swing.JCheckBox chkVer;
     private javax.swing.JButton jButton1;
